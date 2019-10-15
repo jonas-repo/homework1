@@ -13,21 +13,27 @@ public class FibonacciNumbers {
 		Scanner input = new Scanner(System.in);
 		
 		//user input
-		System.out.println("Input the position of numbers you want: ");
-		elements = input.nextInt();
+		
+		do {
+			
+			//user input
+			System.out.println("Input the position of numbers you want: ");
+			elements = input.nextInt();
+			
+			if (elements <= 0) {
+				System.err.println("Please input a number greater from zero");
+			}						
+			
+		}while(elements <= 0);
+			
+		
 		
 		//process and show results
 		for (int i = 0; i < elements; i++) {
 			
-			if(i == elements-1)
-			{
-				System.out.print(number3);
-			}
-			else
-			{
-				System.out.print(number3+",");
-			}
 			
+			System.out.print(number3+" ");
+				
 			number3 = number1 + number2;
 			number1 = number2;
 			number2 = number3;			
